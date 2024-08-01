@@ -17,12 +17,13 @@
     </style>
     <script>
         $(document).ready(function() {
-            $("#loginForm").submit(function(event) {
+             $("#loginForm").submit(function(event) {
                 event.preventDefault();
                 var userName = $("#userId").val(); 
                 if (userName === "validUser") { 
                     $("#greeting").text("Hello, " + userName).show();
                     $("#loginForm").hide();
+                    $("#ticketForm").show(); // Show the ticket form after login
                 } else {
                     $("#errorMessage").text("Login failed. Please try again.").show();
                     $("#userId, #password").val('');
